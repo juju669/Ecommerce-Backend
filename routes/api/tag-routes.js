@@ -25,22 +25,9 @@ router.get('/', (req, res) => {
   .catch((err) => {
     res.status(404).json(err);
   });
-  console.log(` tags found`);
-  console.log(`
-  
-  _,    _   _    ,_
-  .o888P     Y8o8Y     Y888o.
- d88888      88888      88888b
-d888888b_  _d88888b_  _d888888b
-8888888888888888888888888888888
-8888888888888888888888888888888
-YJGS8P"Y888P"Y888P"Y888P"Y8888P
- Y888   '8'   Y8P   '8'   888Y
-  '8o          V          o8'
-    `                     `
-  
-  `);
-});
+  console.log('tags found')
+
+})
 
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
@@ -66,21 +53,7 @@ router.get('/:id', (req, res) => {
   .catch((err) => {
     res.json(500).json(err);
   });
-  console.log(`tag id loaded`);
-  console.log(`
-  
-  _,    _   _    ,_
-  .o888P     Y8o8Y     Y888o.
- d88888      88888      88888b
-d888888b_  _d88888b_  _d888888b
-8888888888888888888888888888888
-8888888888888888888888888888888
-YJGS8P"Y888P"Y888P"Y888P"Y8888P
- Y888   '8'   Y8P   '8'   888Y
-  '8o          V          o8'
-    `                     `
-  
-  `)
+  console.log('tag id loaded')
 });
 
 router.post('/', (req, res) => {
@@ -95,22 +68,7 @@ router.post('/', (req, res) => {
     console.log(err);
     res.status(500).json(err);
   });
-  console.log(`tag created`)
-  console.log(`
-  
-
-  _,    _   _    ,_
-  .o888P     Y8o8Y     Y888o.
- d88888      88888      88888b
-d888888b_  _d88888b_  _d888888b
-8888888888888888888888888888888
-8888888888888888888888888888888
-YJGS8P"Y888P"Y888P"Y888P"Y8888P
- Y888   '8'   Y8P   '8'   888Y
-  '8o          V          o8'
-    `                     `
-  
-  `)
+  console.log('tag created')
 });
 
 router.put('/:id', (req, res) => {
@@ -137,20 +95,7 @@ router.put('/:id', (req, res) => {
       console.log(err)
       res.status(500).json(err);
     })
-    console.log(`tag updated`)
-    consol.log(`
-    
-    _,    _   _    ,_
-    .o888P     Y8o8Y     Y888o.
-   d88888      88888      88888b
-  d888888b_  _d88888b_  _d888888b
-  8888888888888888888888888888888
-  8888888888888888888888888888888
-  YJGS8P"Y888P"Y888P"Y888P"Y8888P
-   Y888   '8'   Y8P   '8'   888Y
-    '8o          V          o8'
-      `                     `
-    `)
+    console.log('tag updated');
 });
 
 router.delete('/:id', (req, res) => {
@@ -171,7 +116,7 @@ router.delete('/:id', (req, res) => {
     console.log(err)
     res.json(404).json(err)
   })
-  console.log(`tag deleted`)
+  console.log('tag deleted')
   console.log(`
   
   _,    _   _    ,_
