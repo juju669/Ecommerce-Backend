@@ -7,12 +7,85 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
+  Product.findAll({
+    include: [
+      {
+        model: Category,
+      },
+      {
+        model: Tag,
+      },
+    ],
+  })
+    .then((pData) => {
+      console.log(`
+      _,    _   _    ,_
+      .o888P     Y8o8Y     Y888o.
+     d88888      88888      88888b
+    d888888b_  _d88888b_  _d888888b
+    8888888888888888888888888888888
+    8888888888888888888888888888888
+    YJGS8P"Y888P"Y888P"Y888P"Y8888P
+     Y888   '8'   Y8P   '8'   888Y
+      '8o          V          o8'
+        `                     ``)
+
+      console.log("all product loaded")
+      res.json(pData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  
 });
 
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+  Product.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: Category,
+        // dont need attributes since we are getting every thing from the
+        // Category model , not just specific data
+        // attributes: {
+        //   category: "category_name",
+        // },
+      },
+      {
+        model: Tag,
+        through: ProductTag,
+      },
+    ],
+  })
+    .then((pData) => {
+      if (!pData) {
+        res.status(400).json({ message: "product not found" });
+        return;
+      }
+      console.log(`
+      _,    _   _    ,_
+      .o888P     Y8o8Y     Y888o.
+     d88888      88888      88888b
+    d888888b_  _d88888b_  _d888888b
+    8888888888888888888888888888888
+    8888888888888888888888888888888
+    YJGS8P"Y888P"Y888P"Y888P"Y8888P
+     Y888   '8'   Y8P   '8'   888Y
+      '8o          V          o8'
+        `                     ` `);
+      console.log("product founded")
+      res.json(pData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // create new product
@@ -45,6 +118,21 @@ router.post('/', (req, res) => {
       console.log(err);
       res.status(400).json(err);
     });
+    console.log(`
+    _,    _   _    ,_
+    .o888P     Y8o8Y     Y888o.
+   d88888      88888      88888b
+  d888888b_  _d88888b_  _d888888b
+  8888888888888888888888888888888
+  8888888888888888888888888888888
+  YJGS8P"Y888P"Y888P"Y888P"Y8888P
+   Y888   '8'   Y8P   '8'   888Y
+    '8o          V          o8'
+      `                     `
+    
+    `)
+    console.log("product created")
+
 });
 
 // update product
@@ -87,10 +175,55 @@ router.put('/:id', (req, res) => {
       // console.log(err);
       res.status(400).json(err);
     });
+
+  console.log(`
+  _,    _   _    ,_
+  .o888P     Y8o8Y     Y888o.
+ d88888      88888      88888b
+d888888b_  _d88888b_  _d888888b
+8888888888888888888888888888888
+8888888888888888888888888888888
+YJGS8P"Y888P"Y888P"Y888P"Y8888P
+ Y888   '8'   Y8P   '8'   888Y
+  '8o          V          o8'
+    `                     `
+  `)
+  console.log("product updated")
 });
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+  .then((pData) => {
+    if (!pData) {
+      res.status(404).json({ message: "product not found"});
+      return;
+    }
+    console.log(`
+    _,    _   _    ,_
+    .o888P     Y8o8Y     Y888o.
+   d88888      88888      88888b
+  d888888b_  _d88888b_  _d888888b
+  8888888888888888888888888888888
+  8888888888888888888888888888888
+  YJGS8P"Y888P"Y888P"Y888P"Y8888P
+   Y888   '8'   Y8P   '8'   888Y
+    '8o          V          o8'
+      `                     `
+    
+    `
+    )
+    console.log("product deleted");
+    res.json(pData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router;
