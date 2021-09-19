@@ -27,3 +27,11 @@ ABOUT:
 ![Screen Shot 2021-09-19 at 4 49 49 PM](https://user-images.githubusercontent.com/58565920/133943700-b01f0c53-9305-45f9-a499-2c6a80a21bb5.png)
 
 ![Screen Shot 2021-09-19 at 4 50 17 PM](https://user-images.githubusercontent.com/58565920/133943711-cd1c8d5d-8472-4988-bf19-8f5ef120d086.png)
+
+
+
+WEBSITE LINK:
+
+TO access my walk through video please see public link from google drive - https://drive.google.com/file/d/1FYk94GDWm2FIXC7qHG2xodSBmBymlbJz/view?usp=sharing
+
+
