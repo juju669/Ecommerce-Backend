@@ -32,6 +32,9 @@ ABOUT:
 
 WEBSITE LINK:
 
-TO access my walk through video please see public link from google drive - https://drive.google.com/file/d/1FYk94GDWm2FIXC7qHG2xodSBmBymlbJz/view?usp=sharing
+To access my walk through video please see public link from google drive - https://drive.google.com/file/d/1FYk94GDWm2FIXC7qHG2xodSBmBymlbJz/view?usp=sharing
 
+Access to git repo- https://github.com/juju669/Ecommerce-Backend.git
+
+Arthur: Julian Wilson
 
