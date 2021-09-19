@@ -10,9 +10,13 @@ SO THAT my company can compete with other e-commerce companies
 INSTALLATION:
 
 dotenv
+
 express
+
 mysql2
+
 nodemon
+
 sequelize
 
 ABOUT:
